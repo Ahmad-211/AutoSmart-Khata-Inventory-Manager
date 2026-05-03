@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Customer, Part
-from .serializers import CustomerSerializer, PartSerializer
+from .models import Customer, Part, Sale
+from .serializers import CustomerSerializer, PartSerializer, SaleSerializer
 
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
@@ -9,3 +9,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
 class PartViewSet(viewsets.ModelViewSet):
     queryset = Part.objects.all()
     serializer_class = PartSerializer
+
+class SaleViewSet(viewsets.ModelViewSet):
+    queryset = Sale.objects.all()
+    serializer_class = SaleSerializer
